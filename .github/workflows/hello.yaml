@@ -12,6 +12,25 @@ on:
     types: ["on-demand-test"]
 
 jobs:
+  echo-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Environment Variables
+        run: |
+          echo "GITHUB_REPOSITORY: ${{ github.repository }}"
+          echo "GITHUB_REF: ${{ github.ref }}"
+          echo "GITHUB_SHA: ${{ github.sha }}"
+          echo "GITHUB_ACTOR: ${{ github.actor }}"
+          echo "GITHUB_EVENT_NAME: ${{ github.event_name }}"
+          echo "GITHUB_EVENT_PATH: ${{ github.event_path }}"
+          echo "GITHUB_WORKFLOW: ${{ github.workflow }}"
+          echo "GITHUB_RUN_ID: ${{ github.run_id }}"
+          echo "GITHUB_RUN_NUMBER: ${{ github.run_number }}"
+          echo "GITHUB_JOB: ${{ github.job }}"
+          echo "GITHUB_ACTION: ${{ github.action }}"
+          echo "GITHUB_API_URL: ${{ github.api_url }}"
+          echo "GITHUB_SERVER_URL: ${{ github.server_url }}"
+          echo "GITHUB_GRAPHQL_URL: ${{ github.graphql_url }}"
   hello-job:
     name: Test Job1
     runs-on: ubuntu-latest
