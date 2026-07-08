@@ -40,6 +40,7 @@ jobs:
           echo "PACKAGE_PATH: $PACKAGE_PATH"
           echo "this application name: $APP_NAME version: $APP_VERSION"
           echo "$RUNNER_CONTEXT"
+          echo "Database password: ${{ secrets.DB_PASSWORD }}"
           
   hello-job:
     name: Test Job1
