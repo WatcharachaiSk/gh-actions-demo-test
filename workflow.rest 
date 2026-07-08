@@ -1,9 +1,8 @@
 POST https://api.github.com/repos/WatcharachaiSk/gh-actions-demo-test/dispatches
 Content-Type: application/json
 Accept: application/vnd.github.v3+json
-
 {
-  "event_type": "after_render_cms",
+  "event_type": "on-demand-test",
   "client_payload": {
     "ref": "main",
     "status": "completed",

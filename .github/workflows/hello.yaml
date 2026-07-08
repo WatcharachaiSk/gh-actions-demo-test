@@ -1,4 +1,5 @@
 name: Hello World!
+
 on: 
   push:
     branches: [main]
@@ -17,6 +18,12 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "Hello Github Actions! na"
+        
+      - name: Show payload from external trigger
+        run: |
+          echo "Trigger Event: ${{ github.event_name }}"
+          echo "Client Payload Message: ${{ github.event.client_payload.message }}"
+
   second-job:
     runs-on: windows-latest
     needs: hello-job
