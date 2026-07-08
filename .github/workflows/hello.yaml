@@ -39,7 +39,7 @@ jobs:
           echo "GITHUB_GRAPHQL_URL: ${{ github.graphql_url }}"
           echo "PACKAGE_PATH: $PACKAGE_PATH"
           echo "this application name: $APP_NAME version: $APP_VERSION"
-          echo "Runner Context: $RUNNER_CONTEXT"
+          echo "$RUNNER_CONTEXT"
           
   hello-job:
     name: Test Job1
