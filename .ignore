@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables & Secrets (ห้ามขึ้น Git เด็ดขาด)
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Production builds
+dist/
+build/
+.next/
+out/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS System files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.rest
