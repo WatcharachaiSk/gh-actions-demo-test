@@ -55,7 +55,9 @@ jobs:
           echo "Client Payload Message: ${{ github.event.client_payload.message }}"
 
   second-job:
+    if: $${{gitub.event_name != 'on-demand-test'}}
     runs-on: windows-latest
     needs: hello-job
     steps:
       - run: echo "This job is running on ${{ runner.os }}"
+        if: ${{ runner.os == 'linux' }}
