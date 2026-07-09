@@ -1,5 +1,24 @@
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+        default: "staging"
+      run_ui_test:
+        description: "Run UI tests before deployment"
+        required: true
+        type: boolean
+        default: false
+      run_test:
+        description: "Run tests before deployment"
+        required: true
+        type: boolean
+        default: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,3 +31,10 @@ jobs:
           fetch-depth: 0
       - name: List files in the repository
         run: ls ${{github.workspace}}
+  test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.run_test == 'true' }}
+    steps:
+      - name: Ui Testing
+        if: ${{ inputs.run_ui_test == 'true' }}
+        run: echo "Running UI tests... in ${{ inputs.environment }} environment"
