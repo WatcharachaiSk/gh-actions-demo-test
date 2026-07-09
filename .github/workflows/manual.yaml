@@ -33,8 +33,7 @@ jobs:
         run: ls ${{github.workspace}}
   test:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.run_test == 'true' }}
+    if: ${{ inputs.run_ui_test == 'true' }}
     steps:
       - name: Ui Testing
-        if: ${{ inputs.run_ui_test == 'true' }}
         run: echo "Running UI tests... in ${{ inputs.environment }} environment"
